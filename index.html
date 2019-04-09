@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Rust: Functional and system-level</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -23,10 +23,168 @@
 		</script>
 	</head>
 	<body>
+        <!--
+rust func features:
+- closures
+- sum types
+- traits a la typeclasses
+- (monadic) error handling
+- existential types
+- 2 base kinds - outlives == subtyping; T: 'a
+
+rust base:
+- ownership & borrowing & lifetimes
+- controlled mutation
+
+rust enabled: iterators, restricted mutability
+move - glue between local purity and efficiency
+rust has well defined purpose - c++ replacement
+history ? philosophy ?
+thread safety
+macros by example => ex scheme
+        -->
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+<section>
+    <h1>Rust</h1>
+    functional programming in the systems space
+</section>
+
+<section>
+    <h3>Some history</h3>
+    <div align="left">
+    <p>(Very) Briefly:</p>
+    <ul>
+        <li>2006: Graydon Hoare has ideas</li>
+        <li>2009: Mozilla starts funding those ideas</li>
+        <li>2010-2014: iterate, rinse, repeat (a lot)</li>
+        <li>2015: version 1.0!</li>
+    </ul>
+    </div>
+</section>
+
+<section>
+    <h3>The meaning of it all</h3>
+    <blockquote>
+        [Rust is] Technology from the past come to save the future from itself
+    </blockquote>
+</section>
+
+<section>
+    <h3>The purpose
+    </h3>
+    <div align="left">
+    <ul>
+        <li>to write safe and fast code
+        </li>
+        <li>be a better "systems language" than c++
+        </li>
+    </ul>
+    </div>
+</section>
+
+<section>
+    <h3>The promise
+    </h3>
+    <div style="float: left">
+        safe
+    </div>
+    <div style="float: right">
+        fast
+    </div>
+</section>
+
+<section>
+    <h3>Some basics</h3>
+    <div align="left">
+    <ul>
+        <li>type inference
+        </li>
+        <li>immutability by default</li>
+        <li>references</li>
+        <li>move semantics</li>
+    </ul>
+    </div>
+</section>
+
+<section>
+    <h3>The first tough nut to crack</h3>
+    <div align="left">
+    <ul>
+        <li>ownership &amp borrowing
+            <ul>
+                <li>sharing xor mutability</li>
+                <li>the borrow checker</li>
+            </ul>
+        </li>
+        <li>enabled by
+            <ul>
+                <li>lifetimes</li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+</section>
+
+<section>
+    <h3>The features
+    </h3>
+    <div align="left">
+    <ul>
+        <li>closures
+        </li>
+        <li>algebraic types
+        </li>
+        <li>traits (typeclass-ish)
+            <ul>
+                <li>and trait bounds</li>
+            </ul>
+        </li>
+        <li>existential types
+        </li>
+        <li>macros
+            <ul>
+                <li>macros-by-example</li>
+                <li>procedural macros</li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+</section>
+
+<section>
+    <h3>Cool consequences !
+    </h3>
+    <div align="left">
+    <ul>
+        <li>iterators
+            <ul>
+                <li>even laziness
+                </li>
+            </ul>
+        </li>
+        <li>move + restricted mutability ≈ local purity
+            <ul>
+                <li>glue between purity and efficiency
+                </li>
+            </ul>
+        </li>
+        <li>(monadic-ish) error handling
+        </li>
+        <li>thread safety
+            <ul>
+                <li>in the type system we trust
+                </li>
+            </ul>
+        </li>
+        <li>metaprogramming
+        </li>
+    </ul>
+    </div>
+</section>
+
+<section>
+</section>
 			</div>
 		</div>
 
@@ -37,6 +195,14 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				align: 'left',
+				hash: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
