@@ -47,7 +47,7 @@ macros by example => ex scheme
 			<div class="slides">
 <section>
     <h1>Rust</h1>
-    functional programming in the systems space
+    Functional Programming In The Systems Space
 </section>
 
 <section>
@@ -86,11 +86,35 @@ macros by example => ex scheme
 <section>
     <h3>The promise
     </h3>
+    <div style="margin-top: 50px" class="fragment">
+    <hr/>
     <div style="float: left">
-        safe
+        <span style="color: green; font-weight: bold">
+        SAFE
+        </span>
+        <p>
+            runtime, gc, etc.
+        </p>
     </div>
     <div style="float: right">
-        fast
+        <span style="color: red; font-weight: bold">
+        FAST
+        </span>
+        <p>
+            pointerz! (and segfaults)
+        </p>
+    </div>
+    <div>
+    <hr style="clear:both"/>
+    </div>
+    </div>
+    <div style="clear: both; margin-top:100px">
+        <span class="fragment" style="color: orange; font-weight: bold">
+        Rust
+        </span>
+        <p class="fragment">
+            off the spectrum
+        </p>
     </div>
 </section>
 
@@ -103,24 +127,25 @@ macros by example => ex scheme
         <li>immutability by default</li>
         <li>references</li>
         <li>move semantics</li>
+        <li>expression blocks</li>
     </ul>
     </div>
 </section>
 
 <section>
-    <h3>The first tough nut to crack</h3>
+    <h3>The tough nut to crack</h3>
     <div align="left">
     <ul>
         <li>ownership &amp borrowing
-            <ul>
+            <ul><ul>
                 <li>sharing xor mutability</li>
                 <li>the borrow checker</li>
-            </ul>
+            </ul></ul>
         </li>
         <li>enabled by
-            <ul>
+            <ul><ul>
                 <li>lifetimes</li>
-            </ul>
+            </ul></ul>
         </li>
     </ul>
     </div>
@@ -136,17 +161,17 @@ macros by example => ex scheme
         <li>algebraic types
         </li>
         <li>traits (typeclass-ish)
-            <ul>
+            <ul><ul>
                 <li>and trait bounds</li>
-            </ul>
+            </ul></ul>
         </li>
         <li>existential types
         </li>
         <li>macros
-            <ul>
+            <ul><ul>
                 <li>macros-by-example</li>
                 <li>procedural macros</li>
-            </ul>
+            </ul></ul>
         </li>
     </ul>
     </div>
@@ -158,24 +183,24 @@ macros by example => ex scheme
     <div align="left">
     <ul>
         <li>iterators
-            <ul>
+            <ul><ul>
                 <li>even laziness
                 </li>
-            </ul>
+            </ul></ul>
         </li>
         <li>move + restricted mutability ≈ local purity
-            <ul>
+            <ul><ul>
                 <li>glue between purity and efficiency
                 </li>
-            </ul>
+            </ul></ul>
         </li>
         <li>(monadic-ish) error handling
         </li>
         <li>thread safety
-            <ul>
+            <ul><ul>
                 <li>in the type system we trust
                 </li>
-            </ul>
+            </ul></ul>
         </li>
         <li>metaprogramming
         </li>
@@ -184,6 +209,10 @@ macros by example => ex scheme
 </section>
 
 <section>
+    <h3>Thanks!
+    </h3>
+
+    Questions ?
 </section>
 			</div>
 		</div>
